@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gender-Based Insights</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #6b7280, #1e3a8a);
+            min-height: 100vh;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+        }
+        .back-btn {
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            transition: transform 0.3s ease;
+        }
+        .back-btn:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <header class="text-center py-10">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Gender-Based Insights</h1>
+        <p class="text-lg md:text-xl max-w-3xl mx-auto">
+            Analyze shoe preferences by gender to optimize marketing strategies.
+        </p>
+    </header>
+
+    <section class="max-w-5xl mx-auto py-10 px-4">
+        <h2 class="text-3xl font-semibold mb-6">Dashboard Overview</h2>
+        <p class="text-lg mb-4">
+            This dashboard provides detailed insights into shoe purchasing trends across different genders, enabling precise targeting for campaigns.
+        </p>
+        <tableau-viz id="tableauViz"
+                     src="https://public.tableau.com/views/_17458374503870/sheet10"
+                     toolbar="bottom"
+                     hide-tabs
+                     width="100%"
+                     height="800">
+        </tableau-viz>
+    </section>
+
+    <section class="max-w-5xl mx-auto py-10 px-4 text-center">
+        <a href="index.html" class="back-btn text-white py-3 px-6 rounded-lg font-medium">Back to Home</a>
+    </section>
+
+    <footer class="text-center py-6">
+        <p>&copy; 2025 ShoeSync Analytics. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+    <script>
+        document.querySelector('.back-btn').addEventListener('click', () => {
+            console.log('Returning to home page');
+        });
+    </script>
+</body>
+</html>
